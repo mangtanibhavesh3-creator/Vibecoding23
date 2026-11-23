@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-obsidian-950: #07080a;
+  --color-obsidian-900: #0d0e12;
+  --color-obsidian-850: #11131a;
+  --color-obsidian-800: #161922;
+  --color-obsidian-700: #202431;
+
+  --color-brand-amber: #e59b58;
+  --color-brand-gold: #d4af37;
+  --color-brand-glow: #f3b47c;
+  --color-brand-cream: #f9f6f0;
+
+  --surface-glass-bg: rgba(17, 19, 26, 0.72);
+  --surface-glass-border: rgba(255, 255, 255, 0.08);
+  --surface-glass-highlight: rgba(229, 155, 88, 0.12);
+  --surface-glass-blur: blur(16px);
+}
+
+/* Atmospheric Base Styles */
+html, body {
+  background-color: var(--color-obsidian-950);
+  color: #f1f5f9;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Subtle luxury background radial mesh */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(229, 155, 88, 0.07) 0%, rgba(212, 175, 55, 0.03) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Bespoke Glassmorphism & Surface Utilities */
+@layer components {
+  .glass-panel {
+    background: var(--surface-glass-bg);
+    backdrop-filter: var(--surface-glass-blur);
+    -webkit-backdrop-filter: var(--surface-glass-blur);
+    border: 1px solid var(--surface-glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  .glass-card-interactive {
+    background: linear-gradient(135deg, rgba(22, 25, 34, 0.75) 0%, rgba(17, 19, 26, 0.65) 100%);
+    backdrop-filter: var(--surface-glass-blur);
+    -webkit-backdrop-filter: var(--surface-glass-blur);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-interactive:hover {
+    border-color: rgba(229, 155, 88, 0.35);
+    box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.55), 0 0 20px -2px rgba(229, 155, 88, 0.15);
+  }
+
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .amber-gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #f3b47c 60%, #e59b58 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .editorial-heading {
+    font-family: 'Instrument Serif', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .gujarati-text {
+    font-family: 'Noto Sans Gujarati', 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0e12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202431;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2d3345;
+}

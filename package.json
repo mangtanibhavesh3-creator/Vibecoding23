@@ -1,0 +1,12 @@
+{
+  "name": "vibecoding-salon-queue-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix salon-queue",
+    "client": "npm run client --prefix salon-queue",
+    "server": "npm run server --prefix salon-queue",
+    "build": "npm run build --prefix salon-queue",
+    "install:all": "npm run install:all --prefix salon-queue"
+  }
+}

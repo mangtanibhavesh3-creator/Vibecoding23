@@ -1,0 +1,20 @@
+{
+  "name": "salon-queue-monorepo",
+  "version": "1.0.0",
+  "description": "Bilingual Salon Queue Management System (MERN Stack + Socket.IO)",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "node server/src/index.js",
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

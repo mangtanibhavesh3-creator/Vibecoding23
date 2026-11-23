@@ -1,0 +1,27 @@
+{
+  "name": "salon-queue-server",
+  "version": "1.0.0",
+  "description": "Express and Socket.IO backend for Salon Queue Management System",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "seed": "node src/seed/seedData.js",
+    "test:engine": "node src/tests/verifyQueueEngine.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "socket.io-client": "^4.8.4"
+  }
+}
